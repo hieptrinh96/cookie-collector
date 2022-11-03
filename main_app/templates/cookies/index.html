@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+<link 
+  rel="stylesheet"
+  type="text/css"
+  href="{% static 'css/cookie/cookie-index.css' %}"
+/>
+{% endblock %}
+
+{% block content %}
+
+<section class="page-header">
+  <h1>Cat List</h1>
+  <img src="{% static 'images/Milkchocolate.png' %}" alt="milk chocolate" />
+  <img src="{% static 'images/Peanutbutter.png' %}" alt="peanut butter" />
+  <img src="{% static 'images/Bluemonster.png' %}" alt="blue monster" />
+  <img src="{% static 'images/Almond Coconut.png' %}" alt="almond coconut fudge" />
+</section>
+
+<section class="card-container">
+  {% for cookie in cookies %}
+    <div class="card">
+      <div class="card-content">
+        <div class="card-img-container">
+          <img 
+            src="{% static 'images/'|add:cookie.name|add:'.png' %}" 
+            alt="A skater boy cat"
+          >
+        </div>
+        <h2 class="card-title">{{ cookie.name }}</h2>
+         <p>{{cookie.description}}</p>
+          <p> {{cookie.flavor}}</p>
+          <p>Quantity: {{ cookie.quantity }} left</p>
+      </div>
+    </div>
+  {% endfor %}
+</section>
+
+{% endblock %}
