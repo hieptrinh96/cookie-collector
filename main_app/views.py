@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.views.generic.edit import CreateView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from .models import Cookie
 
 
@@ -20,3 +20,12 @@ def cookies_detail(request, cookie_id):
 class CookieCreate(CreateView):
   model = Cookie
   fields = '__all__'
+  success_url = '/cats/'
+
+class CookieUpdate(UpdateView):
+  model = Cookie
+  fields = ['name', 'flavor', 'description', 'quantity']
+
+class CookieDelete(DeleteView):
+  model = Cookie
+  success_url = '/cookies/'

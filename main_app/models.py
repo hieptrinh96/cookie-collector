@@ -9,3 +9,6 @@ class Cookie(models.Model):
 
   def __str__(self):
     return self.name
+
+  def get_absolute_url(self):
+    return reverse('cookies_detail', kwargs={'cookie_id': self.id})
