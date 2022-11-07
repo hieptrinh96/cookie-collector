@@ -5,7 +5,7 @@
 <link 
   rel="stylesheet"
   type="text/css"
-  href="{% static 'css/cookie/cookie-index.css' %}"
+  href="{% static 'css/cookie/cookie-detail.css' %}"
 />
 {% endblock %}
 
@@ -23,7 +23,6 @@
   {% for cookie in cookies %}
     <div class="card">
       <a href="/cookies/{{cookie.id}}">
-
         <div class="card-content">
           <div class="card-img-container">
             <img 
