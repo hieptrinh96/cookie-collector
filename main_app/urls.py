@@ -10,4 +10,7 @@ urlpatterns = [
   path('cookies/<int:pk>/update/', views.CookieUpdate.as_view(), name='cookies_update'),
   path('cookies/<int:pk>/delete/', views.CookieDelete.as_view(), name='cookies_delete'),
   path('cookies/<int:cookie_id>/add_review/', views.add_review, name='add_review'),
+  path('iceCream/create/', views.IceCream.as_view(), name='iceCream_create'),
+  path('iceCream/<int:pk>/', views.IceCreamDetail.as_view(), name='iceCream_detail'),
+  path('iceCream/', views.IceCreamList.as_view(), name='iceCream_index')
 ]

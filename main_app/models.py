@@ -35,3 +35,13 @@ class Review(models.Model):
 
   class Meta:
     ordering = ['-date']
+
+class IceCream(models.Model):
+  brand = models.CharField(max_length=50)
+  flavor = models.CharField(max_length=50)
+
+  def __str__(self):
+    return self.name
+
+  def get_absolute_url(self):
+    return reverse('iceCream_detail', kwargs={'pk': self.id})

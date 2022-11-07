@@ -1,7 +1,8 @@
 from django.shortcuts import render, redirect
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
-from .models import Cookie
+from .models import Cookie, IceCream
 from .forms import ReviewForm
+from django.views.generic import ListView, DetailView
 
 def home(request):
   return render(request, 'home.html')
@@ -41,3 +42,13 @@ class CookieUpdate(UpdateView):
 class CookieDelete(DeleteView):
   model = Cookie
   success_url = '/cookies/'
+
+class IceCreamCreate(CreateView):
+  model = IceCream
+  fields = '__all__'
+
+class IceCreamList(ListView):
+  model = IceCream
+
+class IceCreamDetail(DetailView):
+  model = IceCream
