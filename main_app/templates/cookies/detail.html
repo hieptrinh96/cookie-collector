@@ -12,22 +12,18 @@
 {% block content %}
 
 <section class="card-container">
-  {% for cookie in cookies %}
-    <div class="card">
-        <div class="card-content">
-          <div class="card-img-container">
+    <div class="cat-img">
             <img 
             src="{% static 'images/'|add:cookie.name|add:'.png' %}" 
-            alt="A skater boy cat"
+            alt="A cookie"
             >
           </div>
-          <h2 class="card-title">{{ cookie.name }}</h2>
-          <p>{{cookie.description}}</p>
-          <p> {{cookie.flavor}}</p>
-          <p>Quantity: {{ cookie.quantity }} left</p>
-        </div>
-      </div>
-  {% endfor %}
+          <div class="cat-details">
+            <h1>{{ cookie.name }}</h1>
+            <p>{{cookie.description}}</p>
+            <p> {{cookie.flavor}}</p>
+            <p>Quantity: {{ cookie.quantity }} left</p>
+          </div>
 </section>
 
 {% endblock %}
