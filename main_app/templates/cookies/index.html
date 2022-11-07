@@ -22,8 +22,7 @@
 <section class="card-container">
   {% for cookie in cookies %}
     <div class="card">
-      <a href="/cookies/{{cookie.id}}">
-
+      <a href="{% url 'cookies_detail' cookie.id %}">
         <div class="card-content">
           <div class="card-img-container">
             <img 

@@ -5,24 +5,15 @@
 <link 
   rel="stylesheet"
   type="text/css"
-  href="{% static 'css/cookie/cookie-detail.css' %}"
+  href="{% static 'css/cookies/cookie-detail.css' %}"
 />
 {% endblock %}
 
 {% block content %}
 
-<section class="page-header">
-  <h1>Cookie List</h1>
-  <img src="{% static 'images/Milk Chocolate Chip.png' %}" alt="milk chocolate" />
-  <img src="{% static 'images/Peanut Butter.png' %}" alt="peanut butter" />
-  <img src="{% static 'images/Blue Monster.png' %}" alt="blue monster" />
-  <img src="{% static 'images/Almond Coconut.png' %}" alt="almond coconut fudge" />
-</section>
-
 <section class="card-container">
   {% for cookie in cookies %}
     <div class="card">
-      <a href="/cookies/{{cookie.id}}">
         <div class="card-content">
           <div class="card-img-container">
             <img 
@@ -35,7 +26,6 @@
           <p> {{cookie.flavor}}</p>
           <p>Quantity: {{ cookie.quantity }} left</p>
         </div>
-      </a>
       </div>
   {% endfor %}
 </section>
