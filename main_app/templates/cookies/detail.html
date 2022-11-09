@@ -23,15 +23,17 @@
 
 <section class="card-container">
   <div class="cat-img">
-    <img 
-      src="{% static 'images/'|add:cookie.name|add:'.png' %}" 
-      alt="A cookie"
-    >
   </div>
-    <div class="cat-details">
+  <div class="cat-details">
+    <div class="subsection-title">
       <h1>{{ cookie.name }}</h1>
+      <img 
+      src="{% static 'images/cookie.png' %}" 
+      alt="A cookie"
+      >
+    </div>
+    <p> {{cookie.flavor}}</p>
       <p>{{cookie.description}}</p>
-      <p> {{cookie.flavor}}</p>
       <p>Quantity: {{ cookie.quantity }} left</p>
       <div class="cat-actions">
         <a href="{% url 'cookies_update' cookie.id %}" class="btn warn">Edit</a>

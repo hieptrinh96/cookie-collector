@@ -25,12 +25,12 @@
 }
 
 .card-content {
-  padding: 15px;
+  /* padding: 15px; */
   height: 100%;
   width: 100%;
   display: flex;
-  align-items: flex-end;
-  justify-content: flex-end;
+  align-items: center;
+  justify-content: center;
   flex-direction: column;
 }
 
@@ -43,6 +43,7 @@
   display: inline-block;
   text-decoration: none;
   color: var(--text-color);
+  text-align: center;
 }
 
 .card h2 {
@@ -61,4 +62,18 @@
 
 .page-header>img:first-of-type {
   margin-left: 15px;
+}
+
+/* .card-content>img {
+  width: 100px;
+  height: 100px;
+} */
+
+.img-container {
+  width: 100%;
+}
+
+.img-container>img {
+  width: 100px;
+  height: 100px;
 }

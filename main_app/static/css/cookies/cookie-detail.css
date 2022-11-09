@@ -1,15 +1,17 @@
-.cat-container {
+.card-container {
   padding: 35px 30px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  box-sizing: border-box;
+  border: var(--borders);
+  border-radius: var(--card-border-radius);
+  margin: 20px;
+  width: 100%;
 }
 
-.cat-img {
-  width: 75%;
-  max-width: 350px;
-}
+
 
 .usr-img {
   width: 100%;
@@ -74,7 +76,7 @@
 
 .cat-details h1 {
   font-size: var(--font-xxl);
-  margin: 15px 0 3px;
+  margin: 0 3px;
 }
 
 .cat-details h2 {
@@ -93,6 +95,7 @@
   font-size: var(--font-reg);
   margin: 5px 0;
 }
+
 
 .feedings-toy-container>section {
   width: 80%;

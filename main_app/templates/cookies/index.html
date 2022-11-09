@@ -26,13 +26,13 @@
         <div class="card-content">
           <div class="card-img-container">
             <img 
-            src="{% static 'images/'|add:cookie.name|add:'.png' %}" 
-            alt="A skater boy cat"
+            src="{% static 'images/cookie.png' %}" 
+            alt="cookie"
             >
           </div>
           <h2 class="card-title">{{ cookie.name }}</h2>
-          <p>{{cookie.description}}</p>
           <p> {{cookie.flavor}}</p>
+          <p>{{cookie.description}}</p>
           <p>Quantity: {{ cookie.quantity }} left</p>
         </div>
       </a>

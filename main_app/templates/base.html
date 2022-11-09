@@ -27,11 +27,18 @@
     </div>
     <nav>
       <ul>
+        {% if user.is_authenticated%}
         <li><a href="{% url 'cookies_index' %}">All Cookies</a></li>
         <li><a href="{% url 'iceCream_index' %}">All Ice Cream Flavors</a></li>
         <li><a href="{% url 'cookies_create' %}">Add a Cookie</a></li>
         <li><a href="{% url 'iceCream_create' %}">Add ice cream!</a></li>
         <li><a href="{% url 'about' %}">About</a></li>
+        <li><a href="{% url 'logout' %}">Log out</a></li>
+        {% else %}
+        <li><a href="{% url 'about'%}">About</a></li>
+        <li><a href="{% url 'login'%}">Login</a></li>
+        <li><a href="{% url 'signup' %}">Sign Up</a></li>
+        {% endif %}
       </ul>
     </nav>
   </header>

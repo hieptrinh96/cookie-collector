@@ -25,6 +25,9 @@
     <div class="card-bg"></div>
     <a href="{% url 'iceCream_detail' iceCream.id %}">
       <div class="card-content">
+        <div class="img-container">
+          <img src="{% static 'images/pinkIcecream.jpg'%}" alt="ice cream">
+        </div>
         <h2>{{ iceCream.name }}</h2>
         <p>{{ iceCream.flavor }}</p>
       </div>
