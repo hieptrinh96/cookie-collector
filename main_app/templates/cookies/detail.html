@@ -85,6 +85,53 @@
     </div>
     {% endif %}
   </section>
+  <section class="toys">
+    <div class="subsection-title">
+      <h2>Ice Cream</h2>
+      <img src="{% static 'images/vanilla.jpeg' %}" alt="vanilla" />
+      <img src="{% static 'images/choco.jpeg' %}" alt="chocolate" />
+      <img src="{% static 'images/purple.jpeg' %}" alt="ube" />
+    </div>
+    <h3>{{ icecream.name }}</h3>
+    <div class="subsection-content">
+      {% if cookie.iceCream.count %}
+        {% for iceCream in cookie.iceCream.all %}
+          <div class="toy-container">
+            <div 
+              class="color-block"></div>
+            <a href="{% url 'iceCream_detail' iceCream.id %}">
+              <p>A {{ iceCream.name }} {{ iceCream.flavor }}</p>
+            </a>
+          </div>
+        {% endfor %}
+      {% else %}
+        <p class="no-toys">You haven't added any ice cream to your {{cookie.name}} yet!</p>
+      {% endif %}
+    </div>
+    <h3>Available Flavors</h3>
+    <div class="subsection-content">
+      {% if iceCream.count %}
+        {% for iceCream in iceCream.all %}
+        <div class="toy-container">
+            <div 
+              class="color-block"></div>
+            <a href="{% url 'iceCream_detail' iceCream.id %}">
+              <p>{{ iceCream.flavor }} {{ iceCream.name }}</p>
+            </a>
+            <form action="{% url 'assoc_iceCream' cookie.id iceCream.id%}" method="post">
+              {% csrf_token %}
+              <button type="submit" class="btn submit">Add to cookie!</button>
+            </form>
+          </div>
+        {% endfor %}
+      {% else %}
+        <p class="all-toys">
+          {{cookie.name}} already has all the available toys 🥳
+        </p>
+      {% endif %}
+    </div>
+  </section>
+</div>
 </div>
 
 {% endblock %}

@@ -16,10 +16,12 @@ def cookies_index(request):
 
 def cookies_detail(request, cookie_id):
   cookie = Cookie.objects.get(id=cookie_id)
+  iceCream_cookie_doesnt_have = IceCream.objects.exclude(id__in = cookie.iceCream.all().values_list('id'))
   review_form = ReviewForm()
   return render(request, 'cookies/detail.html', {
     'cookie': cookie,
-    'review_form': review_form
+    'review_form': review_form,
+    'iceCream': iceCream_cookie_doesnt_have
   })
 
 def add_review(request, cookie_id):
@@ -32,8 +34,8 @@ def add_review(request, cookie_id):
 
 class CookieCreate(CreateView):
   model = Cookie
-  fields = '__all__'
-  success_url = '/cats/'
+  fields = ['name', 'flavor', 'description', 'quantity']
+  success_url = '/cookies/'
 
 class CookieUpdate(UpdateView):
   model = Cookie
@@ -60,3 +62,7 @@ class IceCreamUpdate(UpdateView):
 class IceCreamDelete(DeleteView):
   model = IceCream
   success_url = '/iceCream/'
+
+def assoc_iceCream(request, cookie_id, iceCream_id):
+  Cookie.objects.get(id=cookie_id).iceCream.add(iceCream_id)
+  return redirect('cookies_detail', cookie_id=cookie_id)

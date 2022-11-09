@@ -14,5 +14,6 @@ urlpatterns = [
   path('iceCream/<int:pk>/', views.IceCreamDetail.as_view(), name='iceCream_detail'),
   path('iceCream/', views.IceCreamList.as_view(), name='iceCream_index'),
   path('iceCream/<int:pk>/update/', views.IceCreamUpdate.as_view(), name='iceCream_update'),
-  path('iceCream/<int:pk>/delete/', views.IceCreamDelete.as_view(), name='iceCream_delete')
+  path('iceCream/<int:pk>/delete/', views.IceCreamDelete.as_view(), name='iceCream_delete'),
+  path('cookies/<int:cookie_id>/assoc_iceCream/<int:iceCream_id>/', views.assoc_iceCream, name='assoc_iceCream')
 ]

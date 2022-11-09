@@ -8,11 +8,22 @@ REVIEWS = (
   ('O', 'Cookie was okay'),
 )
 
+class IceCream(models.Model):
+  name = models.CharField(max_length=50)
+  flavor = models.CharField(max_length=50)
+
+  def __str__(self):
+    return self.name
+
+  def get_absolute_url(self):
+    return reverse('iceCream_detail', kwargs={'pk': self.id})
+
 class Cookie(models.Model):
   name = models.CharField(max_length=100)
   flavor = models.CharField(max_length=100)
   description = models.TextField(max_length=250)
   quantity = models.IntegerField()
+  iceCream = models.ManyToManyField(IceCream)
 
   def __str__(self):
     return self.name
@@ -36,12 +47,3 @@ class Review(models.Model):
   class Meta:
     ordering = ['-date']
 
-class IceCream(models.Model):
-  name = models.CharField(max_length=50)
-  flavor = models.CharField(max_length=50)
-
-  def __str__(self):
-    return self.name
-
-  def get_absolute_url(self):
-    return reverse('iceCream_detail', kwargs={'pk': self.id})
