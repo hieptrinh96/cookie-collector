@@ -12,5 +12,7 @@ urlpatterns = [
   path('cookies/<int:cookie_id>/add_review/', views.add_review, name='add_review'),
   path('iceCream/create/', views.IceCreamCreate.as_view(), name='iceCream_create'),
   path('iceCream/<int:pk>/', views.IceCreamDetail.as_view(), name='iceCream_detail'),
-  path('iceCream/', views.IceCreamList.as_view(), name='iceCream_index')
+  path('iceCream/', views.IceCreamList.as_view(), name='iceCream_index'),
+  path('iceCream/<int:pk>/update/', views.IceCreamUpdate.as_view(), name='iceCream_update'),
+  path('iceCream/<int:pk>/delete/', views.IceCreamDelete.as_view(), name='iceCream_delete')
 ]

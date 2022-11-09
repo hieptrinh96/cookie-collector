@@ -14,11 +14,11 @@
 <div class="card">
   <div class="card-bg"></div>
   <div class="card-content">
-    <h2>{{ icecream.brand }}</h2>
+    <h2>{{ icecream.name }}</h2>
     <p>{{ icecream.flavor }}</p>
   </div>
 </div>
-{% comment %} <a href="{% url 'toys_update' toy.id %}" class="btn warn">Edit</a>
-<a href="{% url 'toys_delete' toy.id %}" class="btn danger">Delete</a> {% endcomment %}
+<a href="{% url 'iceCream_update' icecream.id %}" class="btn warn">Edit</a>
+<a href="{% url 'iceCream_delete' icecream.id %}" class="btn danger">Delete</a>
 
 {% endblock %}

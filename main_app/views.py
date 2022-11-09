@@ -52,3 +52,11 @@ class IceCreamList(ListView):
 
 class IceCreamDetail(DetailView):
   model = IceCream
+
+class IceCreamUpdate(UpdateView):
+  model = IceCream
+  fields = ['name', 'flavor']
+
+class IceCreamDelete(DeleteView):
+  model = IceCream
+  success_url = '/iceCream/'
