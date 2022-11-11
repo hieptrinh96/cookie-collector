@@ -64,11 +64,6 @@
   margin-left: 15px;
 }
 
-/* .card-content>img {
-  width: 100px;
-  height: 100px;
-} */
-
 .img-container {
   width: 100%;
 }
@@ -76,4 +71,9 @@
 .img-container>img {
   width: 100px;
   height: 100px;
+}
+
+body {
+  background-image: url('../../images/anothericecream.jpeg');
+  background-repeat: no-repeat;
 }

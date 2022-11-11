@@ -10,6 +10,7 @@
   margin: 10px;
   border: var(--borders);
   box-shadow: var(--card-box-shadow);
+  background-color: white;
 }
 
 .card-content {
@@ -41,4 +42,18 @@
 
 .card-title {
   color: orange;
+}
+
+body {
+  background-image: url('../../images/cookiebackground.jpeg');
+}
+
+.page-header>img {
+  background-color: none;
+}
+
+h1 {
+  color: white;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: black;
 }
