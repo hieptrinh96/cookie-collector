@@ -84,3 +84,11 @@ main>section {
     max-width: 520px;
   }
 }
+
+body {
+  background-image: url('../images/cookiebackground.jpeg');
+}
+
+h1 {
+  color: white;
+}
