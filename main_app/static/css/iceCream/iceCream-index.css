@@ -74,6 +74,15 @@
 }
 
 body {
-  background-image: url('../../images/anothericecream.jpeg');
-  background-repeat: no-repeat;
+  background-image: url('../../images/icecreambackground.jpg');
+}
+
+.card-content {
+  background-color: white;
+}
+
+h1 {
+  color: white;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: black;
 }
